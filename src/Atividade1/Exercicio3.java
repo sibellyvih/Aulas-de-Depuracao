@@ -23,7 +23,10 @@ public class Exercicio3 {
             System.out.print("Quantidade (>0): ");
             int qtd = sc.nextInt();
 
-            if (qtd < 0) qtd = -qtd;
+            if (qtd < 0) {
+                qtd = 0;
+                System.out.println("Precisa ser um número positivo");
+            }
 
             if (tipo == 1) {
                 saldo += qtd;
@@ -32,19 +35,20 @@ public class Exercicio3 {
                 if (qtd <= saldo) {
                     saldo -= qtd;
                     totalSaidas += qtd;
+                } else {
+                    System.out.println("Rejeitado");
                 }
-            } else {
-                System.out.println("Rejeitado.");
             }
         }
 
-        int saldoFinal = saldoInicial + totalEntradas - totalSaidas;
+            int saldoFinal = saldoInicial + totalEntradas - totalSaidas;
 
-        System.out.println("Saldo inicial: " + saldoInicial);
-        System.out.println("Total entradas: " + totalEntradas);
-        System.out.println("Total saídas: " + totalSaidas);
-        System.out.println("Saldo final: " + saldoFinal);
+            System.out.println("Saldo inicial: " + saldoInicial);
+            System.out.println("Total entradas: " + totalEntradas);
+            System.out.println("Total saídas: " + totalSaidas);
+            System.out.println("Saldo final: " + saldoFinal);
 
-        sc.close();
+            sc.close();
+        }
     }
-}
+
